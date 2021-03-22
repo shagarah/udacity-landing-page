@@ -175,15 +175,50 @@ section.active-section .landing__container {
 }
 
 @media only screen and (max-width: 600px){
-    h1 {
-        font-size: 7em;
-        margin: 2em 4rem 1em;
+    main {
+        margin: 0;
+        padding:0;
     }
-    .navbar__menu li {
+    section {
+        padding: 10px;
+    }
+    #navbar__list {
+        margin: 0;
+        padding:0;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .navbar__menu{
+        position: relative;
+        width: 100%;
+    }
+    .menu__link {
         display: block;
+        border-radius: 0;
+    }
+    .menu__link:first-child {
+        border-radius: 0;
+    }
+    
+    .menu__link:last-child {
+        border-radius: 0;
+    }
+    
+    .menu__link:first-child a {
+        border-radius: 0;
+    }
+    
+    .menu__link:last-child a {
+        border-radius: 0;
     }
     .landing__container {
-        max-width: 50em;
-        padding: 4em;
+        padding: 10px;
+    }
+    section.active-section .landing__container {
+        border-radius: 0;
     }
 }

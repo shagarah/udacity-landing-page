@@ -20,10 +20,10 @@ const LP = (()=> {
                 // a section is intersecting now with the viewport
                 if(activeSection) {
                     // activeSection already defined -> remove the class from the current active section
-                    activeSection.classList.toggle('active-section');
+                    activeSection.classList.remove('active-section');
                 }
                 // add the active class to the new in-view section
-                trg.target.classList.toggle('active-section');
+                trg.target.classList.add('active-section');
                 // assign the new section to activeSection variable
                 activeSection = trg.target;
                 //
@@ -31,10 +31,10 @@ const LP = (()=> {
                 const lnk = document.querySelector('li.menu__link[data-nav="'+activeSection.getAttribute('data-nav')+'"]');
                 if(activeLink) {
                     // activeLink already defined -> remove the class from the current active item
-                    activeLink.classList.toggle('menu__link__active');
+                    activeLink.classList.remove('menu__link__active');
                 }
                 // add the active class to the new menu item
-                lnk.classList.toggle('menu__link__active');
+                lnk.classList.add('menu__link__active');
                 // update activeLink variable with the new active item
                 activeLink = lnk;
                 //
@@ -87,7 +87,6 @@ const LP = (()=> {
             // use the window scroll event with a setTimeout function to detect non-scrolling state and show / hide the menu accordingly
             // use passive : true for better scrolling performance
             //
-            /*
             // a variable to hold the state of non-scrolling event
             let notScrolling;
             wnd.addEventListener('scroll', ()=> {
@@ -95,7 +94,6 @@ const LP = (()=> {
                 ul.classList.add('hide-nav');
                 notScrolling = setTimeout(()=> { ul.classList.remove('hide-nav'); }, 100);
             }, {passive: true});
-            */
             //
             //back to top button
             document.querySelector('#back-to-top').addEventListener('click', ()=> { wnd.scrollTo({top: 0, left: 0, behavior: 'smooth' }); }, false);

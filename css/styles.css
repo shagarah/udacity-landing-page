@@ -89,7 +89,7 @@ section {
     transition: ease 0.3s all;
 }
 
-#navbar__list .menu__link {
+.menu__link {
     display: inline-block;
     cursor: pointer;
     list-style: none;
@@ -99,27 +99,29 @@ section {
     background-color: var(--dark);
     box-shadow: 0 0 var(--shadow) var(--dark);
 }
-#navbar__list .menu__link:first-child {
+
+.menu__link:first-child {
     border-bottom-left-radius: var(--radius);
 }
 
-#navbar__list .menu__link:last-child {
+.menu__link:last-child {
     border-bottom-right-radius: var(--radius);
 }
 
-#navbar__list .menu__link:first-child .menu__link {
+.menu__link:first-child a {
     border-bottom-left-radius: var(--radius);
 }
 
-#navbar__list .menu__link:last-child .menu__link {
+.menu__link:last-child a {
     border-bottom-right-radius: var(--radius);
 }
 
-#navbar__list .menu__link:hover,
-#navbar__list .menu__link:active,
-#navbar__list .menu__link .menu__link__active  {
+.menu__link:hover,
+.menu__link:active,
+.menu__link .menu__link__active  {
     color: var(--dark);
     background-color: var(--high);
+    transition: ease 0.3s all;
 }
 
 /* Footer Styles */

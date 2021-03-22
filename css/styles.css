@@ -118,7 +118,7 @@ section {
 
 .menu__link:hover,
 .menu__link:active,
-.menu__link .menu__link__active  {
+.menu__link__active  {
     color: var(--dark);
     background-color: var(--high);
     transition: ease 0.3s all;

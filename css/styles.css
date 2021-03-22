@@ -1,0 +1,187 @@
+/*
+ *
+ * CSS written based on SMACSS architecture.
+ * To learn more, visit: http://smacss.com/
+ * 
+ * For simplicity, no reset or normalize is added. 
+ * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
+ *
+*/
+:root
+{
+  --light:#eee;
+  --dark:#333;
+  --high: #eee1b2;
+  --radius: 10px;
+  --shadow: 10px;
+}
+
+/* ---- Base Rules ---- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+    color: var(--dark);
+    background-color: var(--light);
+}
+
+/* Header Styles */
+.page__header {
+    width: 100%;
+}
+
+/* Typeography General*/
+h1 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 5em;
+    margin: 2em 1rem;
+}
+
+h2 {
+    border-bottom: 1px solid var(--dark);
+    font-family: 'Oxygen', Sans-Serif;
+    font-size: 3em;
+    color: var(--dark);
+}
+
+p {
+    line-height: 1.6em;
+    color: var(--dark);
+}
+
+/* ---- Layout Rules ---- */
+main {
+    margin: 10vh;
+}
+
+.main-hero {
+    min-height: 40vh;
+    padding-top: 3em;
+}
+
+section {
+    position: relative;
+    min-height: 90vh;
+    padding: 2rem;
+}
+
+
+/* ---- Module Rules ---- */
+
+/* Navigation Styles*/
+.navbar__menu{
+    position: fixed;
+    top:0;
+    display: block;
+    width: 100%;
+    z-index: 100;
+    cursor: default;
+}
+
+#navbar__list {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hide-nav {
+    display: none;
+    transition: ease 0.3s all;
+}
+
+#navbar__list .menu__link {
+    display: inline-block;
+    cursor: pointer;
+    list-style: none;
+    padding: 1em;
+    font-weight: bold;
+    color: var(--light);
+    background-color: var(--dark);
+    box-shadow: 0 0 var(--shadow) var(--dark);
+}
+#navbar__list .menu__link:first-child {
+    border-bottom-left-radius: var(--radius);
+}
+
+#navbar__list .menu__link:last-child {
+    border-bottom-right-radius: var(--radius);
+}
+
+#navbar__list .menu__link:first-child .menu__link {
+    border-bottom-left-radius: var(--radius);
+}
+
+#navbar__list .menu__link:last-child .menu__link {
+    border-bottom-right-radius: var(--radius);
+}
+
+#navbar__list .menu__link:hover,
+#navbar__list .menu__link:active,
+#navbar__list .menu__link .menu__link__active  {
+    color: var(--dark);
+    background-color: var(--high);
+}
+
+/* Footer Styles */
+.page__footer {
+    background-color: var(--dark);
+    padding: 3em;
+    color: var(--light);
+}
+
+.page__footer p{
+    color: var(--light);
+}
+
+
+/* ---- Theme Rules ---- */
+/* Landing Container Styles */
+.landing__container {
+    padding: 1em;
+    text-align: left;
+}
+
+
+/* ---- Theme State Rules ---- */
+/* Section Active Styles */
+/* Note: active-section class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+section.active-section .landing__container {
+    background-color: var(--high);
+    border-radius: var(--radius);
+    transition: ease 0.3s all;
+}
+
+#back-to-top {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    line-height: 300%;
+    color: var(--light);
+    background-color: var(--dark);
+    border: 1px solid var(--light);
+    border-radius: var(--radius);
+    box-shadow: 0 0 var(--shadow) var(--dark);
+    cursor: pointer;
+}
+
+#back-to-top:hover {
+    color: var(--dark);
+    background-color: var(--high);
+}
+
+@media only screen and (max-width: 600px){
+    h1 {
+        font-size: 7em;
+        margin: 2em 4rem 1em;
+    }
+    .navbar__menu li {
+        display: block;
+    }
+    .landing__container {
+        max-width: 50em;
+        padding: 4em;
+    }
+}
